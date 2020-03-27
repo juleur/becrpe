@@ -1,0 +1,163 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type ClassPaper {
+  id: ID!
+  title: String
+  path: String
+  createdAt: Time
+  updatedAt: Time
+}
+
+type RefresherCourse {
+  id: ID!
+  subject: SubjectEnum
+  year: String
+  isFinished: Boolean
+  price: Float
+  createdAt: Time
+  updatedAt: Time
+  totalDuration: String
+  isPurchased: Boolean
+  teachers: [User]!
+}
+
+type Session {
+  id: ID!
+  title: String
+  section: SectionEnum
+  type: TypeEnum
+  description: String
+  sessionNumber: Int
+  recordedOn: Time
+  createdAt: Time
+  updatedAt: Time
+}
+
+type Token {
+  jwt: String!
+  refreshToken: String!
+}
+
+type User {
+  id: ID!
+  username: String
+  fullname: String
+  email: String
+  isTeacher: Boolean
+  createdAt: Time
+  updatedAt: Time
+}
+
+type Video {
+  id: ID!
+  path: String
+  duration: String
+  createdAt: Time
+  updatedAt: Time
+}
+
+type Query {
+  login(input: LoginInput!): Token!
+  refresherCourses(input: RefresherCourseInput!): [RefresherCourse]!
+  refresherCourse(refresherCourseId: Int!): RefresherCourseResponse!
+  playerCheckUser: Boolean!
+  profile(userId: Int!): User!
+  sessionCourse(input: SessionInput!): SessionResponse!
+  authTeacher(userId: Int!): Boolean!
+  subjectsEnum: [String!]!
+  totalHoursCourses: String!
+}
+
+type Mutation {
+  createUser(input: NewUserInput!): Boolean!
+  refreshToken(refreshToken: String!): Token!
+  updateUser(input: UpdateUserInput!): User!
+  purchaseRefresherCourse(input: PurchaseRefresherCourseInput!): Boolean!
+  createRefresherCourse(input: NewSessionInput!): Boolean!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+input RefresherCourseInput {
+  byUserId: Int
+  bySubject: SubjectEnum
+}
+
+type RefresherCourseResponse {
+  refresherCourse: RefresherCourse!
+  sessions: [Session]!
+}
+
+input SessionInput {
+  userId: Int!
+  refresherCourseId: Int!
+  sessionId: Int!
+}
+
+type SessionResponse {
+  session: Session!
+  video: Video!
+  classPapers: [ClassPaper!]!
+  teacher: User!
+}
+
+input NewUserInput {
+  username: String!
+  email: String!
+  fullname: String
+  password: String!
+}
+
+input UpdateUserInput {
+  username: String
+  email: String
+  fullname: String
+  password: String!
+}
+
+input PurchaseRefresherCourseInput {
+  refresherCourseId: Int!
+  paypalOrderId: String!
+  paypalPayerId: String!
+}
+
+input NewSessionInput {
+  refresherCourseId: Int!
+  title: String!
+  section: SectionEnum!
+  type: TypeEnum!
+  description: String
+  sessionNumber: Int
+  recordedOn: Time!
+  videoFile: Upload!
+  docFiles: [DocUploadFile]
+}
+
+input DocUploadFile {
+  title: String
+  file: Upload!
+}
+
+scalar Time
+scalar Upload
+
+enum TypeEnum {
+  EXERCISE
+  LESSON
+}
+
+enum SectionEnum {
+  DIALECTICAL
+  SCIENTIFIC
+}
+
+enum SubjectEnum {
+  ECONOMICS
+  FRENCH
+  MATHETIMATICS
+}
