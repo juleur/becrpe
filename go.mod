@@ -1,4 +1,4 @@
-module github.com/juleur/ecrpe
+module github.com/juleur/becrpe
 
 go 1.14
 
@@ -10,6 +10,7 @@ require (
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/hashicorp/golang-lru v0.5.4 // indirect
 	github.com/jmoiron/sqlx v1.2.0
+	github.com/juleur/becrpe v0.1.0
 	github.com/pkg/errors v0.9.1
 	github.com/rs/cors v1.7.0
 	github.com/sirupsen/logrus v1.5.0
@@ -19,3 +20,5 @@ require (
 	golang.org/x/text v0.3.2
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
 )
+
+replace github.com/juleur/becrpe/customhttp => ./customhttp

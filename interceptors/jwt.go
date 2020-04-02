@@ -6,9 +6,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/juleur/becrpe/customhttp"
+
 	"github.com/gbrlsnchs/jwt/v3"
-	"github.com/juleur/ecrpe/customhttp"
-	"github.com/juleur/ecrpe/graph/model"
+	"github.com/juleur/becrpe/graph/model"
 )
 
 // JWTContextKey struct

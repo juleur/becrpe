@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"net/http"
 	"time"
@@ -19,6 +20,7 @@ import (
 	"github.com/juleur/ecrpe/interceptors"
 	"github.com/rs/cors"
 	"github.com/sirupsen/logrus"
+	"github.com/vektah/gqlparser/gqlerror"
 	"gopkg.in/natefinch/lumberjack.v2"
 )
 
@@ -80,7 +82,6 @@ func main() {
 		AllowCredentials: true,
 		Debug:            false,
 	}).Handler)
-
 	srv := handler.New(generated.NewExecutableSchema(generated.Config{
 		Resolvers: &graph.Resolver{
 			DB:                db,
@@ -90,6 +91,16 @@ func main() {
 			Logger:            logger,
 		},
 	}))
+	srv.SetRecoverFunc(func(ctx context.Context, err interface{}) error {
+		logger.Error(err)
+		return &gqlerror.Error{
+			Message: "Oops, une erreur est survenue",
+			Extensions: map[string]interface{}{
+				"statusCode": http.StatusInternalServerError,
+				"statusText": http.StatusText(http.StatusInternalServerError),
+			},
+		}
+	})
 	srv.AddTransport(transport.Options{})
 	srv.AddTransport(transport.GET{})
 	srv.AddTransport(transport.POST{})

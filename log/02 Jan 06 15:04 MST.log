@@ -1,77 +1,140 @@
 {
-  "file": "/Users/rd/Coding/go/src/github.com/juleur/ecrpe/graph/schema.resolvers.go:79",
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/graph/schema.resolvers.go:78",
   "func": "github.com/juleur/ecrpe/graph.(*mutationResolver).RefreshToken",
   "level": "error",
   "msg": "sql: no rows in result set",
-  "time": "2020-03-26T23:39:22+0100"
+  "time": "2020-04-01T15:32:02+0200"
 }
 {
-  "file": "/Users/rd/Coding/go/src/github.com/juleur/ecrpe/server.go:53",
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/graph/schema.resolvers.go:78",
+  "func": "github.com/juleur/ecrpe/graph.(*mutationResolver).RefreshToken",
+  "level": "error",
+  "msg": "sql: no rows in result set",
+  "time": "2020-04-01T15:35:05+0200"
+}
+{
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/graph/schema.resolvers.go:78",
+  "func": "github.com/juleur/ecrpe/graph.(*mutationResolver).RefreshToken",
+  "level": "error",
+  "msg": "sql: no rows in result set",
+  "time": "2020-04-01T15:41:14+0200"
+}
+{
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/graph/schema.resolvers.go:78",
+  "func": "github.com/juleur/ecrpe/graph.(*mutationResolver).RefreshToken",
+  "level": "error",
+  "msg": "sql: no rows in result set",
+  "time": "2020-04-01T15:57:15+0200"
+}
+{
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/graph/schema.resolvers.go:78",
+  "func": "github.com/juleur/ecrpe/graph.(*mutationResolver).RefreshToken",
+  "level": "error",
+  "msg": "sql: no rows in result set",
+  "time": "2020-04-01T16:03:07+0200"
+}
+{
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/server.go:55",
   "func": "main.init.1",
   "level": "fatal",
   "msg": "dial tcp 127.0.0.1:7359: connect: connection refused",
-  "time": "2020-03-27T07:10:12+0100"
+  "time": "2020-04-02T09:10:01+0200"
 }
 {
-  "file": "/Users/rd/Coding/go/src/github.com/juleur/ecrpe/graph/schema.resolvers.go:79",
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/graph/schema.resolvers.go:78",
   "func": "github.com/juleur/ecrpe/graph.(*mutationResolver).RefreshToken",
   "level": "error",
   "msg": "sql: no rows in result set",
-  "time": "2020-03-27T07:11:25+0100"
+  "time": "2020-04-02T09:11:33+0200"
 }
 {
-  "file": "/Users/rd/Coding/go/src/github.com/juleur/ecrpe/graph/schema.resolvers.go:78",
-  "func": "github.com/juleur/ecrpe/graph.(*mutationResolver).RefreshToken",
-  "level": "error",
-  "msg": "sql: no rows in result set",
-  "time": "2020-03-27T07:25:56+0100"
-}
-{
-  "file": "/Users/rd/Coding/go/src/github.com/juleur/ecrpe/graph/schema.resolvers.go:78",
-  "func": "github.com/juleur/ecrpe/graph.(*mutationResolver).RefreshToken",
-  "level": "error",
-  "msg": "sql: no rows in result set",
-  "time": "2020-03-27T07:26:02+0100"
-}
-{
-  "file": "/Users/rd/Coding/go/src/github.com/juleur/ecrpe/graph/schema.resolvers.go:78",
-  "func": "github.com/juleur/ecrpe/graph.(*mutationResolver).RefreshToken",
-  "level": "error",
-  "msg": "sql: no rows in result set",
-  "time": "2020-03-27T07:36:23+0100"
-}
-{
-  "file": "/Users/rd/Coding/go/src/github.com/juleur/ecrpe/graph/schema.resolvers.go:575",
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/graph/schema.resolvers.go:568",
   "func": "github.com/juleur/ecrpe/graph.(*queryResolver).Profile",
   "level": "error",
   "msg": "User n°0 authentication didn't succeed HttpErrorStatus ",
-  "time": "2020-03-27T07:48:46+0100"
+  "time": "2020-04-02T09:13:32+0200"
 }
 {
-  "file": "/Users/rd/Coding/go/src/github.com/juleur/ecrpe/graph/schema.resolvers.go:79",
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/graph/schema.resolvers.go:78",
   "func": "github.com/juleur/ecrpe/graph.(*mutationResolver).RefreshToken",
   "level": "error",
   "msg": "sql: no rows in result set",
-  "time": "2020-03-27T08:07:50+0100"
+  "time": "2020-04-02T09:22:02+0200"
 }
 {
-  "file": "/Users/rd/Coding/go/src/github.com/juleur/ecrpe/graph/schema.resolvers.go:78",
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/graph/schema.resolvers.go:78",
   "func": "github.com/juleur/ecrpe/graph.(*mutationResolver).RefreshToken",
   "level": "error",
   "msg": "sql: no rows in result set",
-  "time": "2020-03-27T08:32:09+0100"
+  "time": "2020-04-02T09:22:17+0200"
 }
 {
-  "file": "/Users/rd/Coding/go/src/github.com/juleur/ecrpe/graph/schema.resolvers.go:78",
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/graph/schema.resolvers.go:78",
   "func": "github.com/juleur/ecrpe/graph.(*mutationResolver).RefreshToken",
   "level": "error",
   "msg": "sql: no rows in result set",
-  "time": "2020-03-27T08:45:17+0100"
+  "time": "2020-04-02T09:23:29+0200"
 }
 {
-  "file": "/Users/rd/Coding/go/src/github.com/juleur/ecrpe/graph/schema.resolvers.go:78",
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/graph/schema.resolvers.go:78",
   "func": "github.com/juleur/ecrpe/graph.(*mutationResolver).RefreshToken",
   "level": "error",
   "msg": "sql: no rows in result set",
-  "time": "2020-03-27T08:50:10+0100"
+  "time": "2020-04-02T09:24:18+0200"
+}
+{
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/graph/schema.resolvers.go:78",
+  "func": "github.com/juleur/ecrpe/graph.(*mutationResolver).RefreshToken",
+  "level": "error",
+  "msg": "sql: no rows in result set",
+  "time": "2020-04-02T09:24:22+0200"
+}
+{
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/graph/schema.resolvers.go:78",
+  "func": "github.com/juleur/ecrpe/graph.(*mutationResolver).RefreshToken",
+  "level": "error",
+  "msg": "sql: no rows in result set",
+  "time": "2020-04-02T09:25:24+0200"
+}
+{
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/graph/schema.resolvers.go:78",
+  "func": "github.com/juleur/ecrpe/graph.(*mutationResolver).RefreshToken",
+  "level": "error",
+  "msg": "sql: no rows in result set",
+  "time": "2020-04-02T09:27:50+0200"
+}
+{
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/graph/schema.resolvers.go:78",
+  "func": "github.com/juleur/ecrpe/graph.(*mutationResolver).RefreshToken",
+  "level": "error",
+  "msg": "sql: no rows in result set",
+  "time": "2020-04-02T09:28:04+0200"
+}
+{
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/graph/schema.resolvers.go:78",
+  "func": "github.com/juleur/ecrpe/graph.(*mutationResolver).RefreshToken",
+  "level": "error",
+  "msg": "sql: no rows in result set",
+  "time": "2020-04-02T09:28:27+0200"
+}
+{
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/graph/schema.resolvers.go:568",
+  "func": "github.com/juleur/ecrpe/graph.(*queryResolver).Profile",
+  "level": "error",
+  "msg": "User n°0 authentication didn't succeed HttpErrorStatus ",
+  "time": "2020-04-02T09:30:11+0200"
+}
+{
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/graph/schema.resolvers.go:78",
+  "func": "github.com/juleur/ecrpe/graph.(*mutationResolver).RefreshToken",
+  "level": "error",
+  "msg": "sql: no rows in result set",
+  "time": "2020-04-02T09:38:26+0200"
+}
+{
+  "file": "/Users/rd/Coding/go/src/github.com/juleur/becrpe/graph/schema.resolvers.go:569",
+  "func": "github.com/juleur/ecrpe/graph.(*queryResolver).Profile",
+  "level": "error",
+  "msg": "User n°0 authentication didn't succeed HttpErrorStatus ",
+  "time": "2020-04-02T09:45:52+0200"
 }

@@ -17,7 +17,7 @@ import (
 	"github.com/juleur/ecrpe/graph/model"
 	"github.com/juleur/ecrpe/interceptors"
 	"github.com/juleur/ecrpe/utils"
-	"github.com/vektah/gqlparser/gqlerror"
+	"github.com/vektah/gqlparser/v2/gqlerror"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -76,15 +76,13 @@ func (r *mutationResolver) RefreshToken(ctx context.Context, refreshToken string
 		WHERE ua.is_revoked = 0 AND ua.revoked_at is NULL AND ua.refresh_token = ?
   	`, refreshToken); err != nil {
 		r.Logger.Errorln(err)
-		e := gqlerror.Error{
+		return &model.Token{}, &gqlerror.Error{
 			Message: "Oops, une erreur est survenue avec votre session, veuillez vous réauthentifier",
 			Extensions: map[string]interface{}{
 				"statusCode": http.StatusUnauthorized,
 				"statusText": http.StatusText(http.StatusUnauthorized),
 			},
 		}
-		fmt.Println(e.Error())
-		return &model.Token{}, &e
 	}
 	// revoke token
 	if _, err := r.DB.Queryx(`
@@ -567,6 +565,7 @@ func (r *queryResolver) PlayerCheckUser(ctx context.Context) (bool, error) {
 func (r *queryResolver) Profile(ctx context.Context, userID int) (*model.User, error) {
 	userAuth := interceptors.ForUserContext(ctx)
 	if !userAuth.IsAuth {
+		fmt.Println(userAuth)
 		r.Logger.Errorln(fmt.Sprintf("User n°%d authentication didn't succeed", userAuth.UserID), "HttpErrorStatus", userAuth.HttpErrorResponse.StatusText)
 		return &model.User{}, &gqlerror.Error{
 			Message: userAuth.HttpErrorResponse.Message,
