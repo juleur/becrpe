@@ -40,20 +40,20 @@ func JWTCheck(secretKey string) func(http.Handler) http.Handler {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			userJWT := r.Header.Get("Authorization")
 			// Check if header has bearer jwt
-			if userJWT == "" {
+			if len(userJWT) == 0 {
 				user := User{HttpErrorResponse: HttpErrorResponse{
 					Message:    "Oops, une erreur est survenue, veuillez vous réauthentifier",
 					StatusCode: http.StatusUnauthorized,
 					StatusText: http.StatusText(http.StatusUnauthorized),
 				}}
-				ctx := context.WithValue(r.Context(), userJWTCtxKey, &user)
+				ctx := context.WithValue(r.Context(), userJWTCtxKey, user)
 				next.ServeHTTP(w, r.WithContext(ctx))
 				return
 			}
 			pl := model.CustomPayload{}
 			signature := jwt.NewHS512([]byte(secretKey))
 			// Validating alg
-			if _, err := jwt.Verify([]byte(strings.Split(userJWT, " ")[1]), signature, &pl, jwt.ValidateHeader); err != nil {
+			if _, err := jwt.Verify([]byte(strings.TrimPrefix(userJWT, "Bearer ")), signature, &pl, jwt.ValidateHeader); err != nil {
 				user := User{HttpErrorResponse: HttpErrorResponse{
 					Message:    "Oops, une erreur est survenue, veuillez vous réauthentifier",
 					StatusCode: http.StatusUnauthorized,
@@ -68,7 +68,7 @@ func JWTCheck(secretKey string) func(http.Handler) http.Handler {
 			validatePayload := jwt.ValidatePayload(&pl.Payload, issuerValidator, expValidator)
 			// Split "bearer" from JWT
 			// Validating claims
-			if _, err := jwt.Verify([]byte(strings.Split(userJWT, " ")[1]), signature, &pl, validatePayload); err != nil {
+			if _, err := jwt.Verify([]byte(strings.TrimPrefix(userJWT, "Bearer ")), signature, &pl, validatePayload); err != nil {
 				switch err {
 				case jwt.ErrExpValidation:
 					user := User{

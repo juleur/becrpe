@@ -35,7 +35,7 @@ resolver:
 # gqlgen will search for any type names in the schema in these go packages
 # if they match it will use them, otherwise it will generate them.
 autobind:
-  - "github.com/juleur/ecrpe/graph/model"
+  - "github.com/juleur/becrpe/graph/model"
 
 # This section declares type mapping between the GraphQL and go type systems
 #
@@ -64,13 +64,13 @@ models:
         resolver: true
   ClassPaper:
     model:
-      - github.com/juleur/ecrpe/graph/model.ClassPaper
+      - github.com/juleur/becrpe/graph/model.ClassPaper
   Token:
     model:
-      - github.com/juleur/ecrpe/graph/model.Token
+      - github.com/juleur/becrpe/graph/model.Token
   User:
     model:
-      - github.com/juleur/ecrpe/graph/model.User
+      - github.com/juleur/becrpe/graph/model.User
   Video:
     model:
-      - github.com/juleur/ecrpe/graph/model.Video
+      - github.com/juleur/becrpe/graph/model.Video

@@ -13,10 +13,10 @@ import (
 
 	"github.com/gbrlsnchs/jwt/v3"
 	"github.com/go-sql-driver/mysql"
-	"github.com/juleur/ecrpe/graph/generated"
-	"github.com/juleur/ecrpe/graph/model"
-	"github.com/juleur/ecrpe/interceptors"
-	"github.com/juleur/ecrpe/utils"
+	"github.com/juleur/becrpe/graph/generated"
+	"github.com/juleur/becrpe/graph/model"
+	"github.com/juleur/becrpe/interceptors"
+	"github.com/juleur/becrpe/utils"
 	"github.com/vektah/gqlparser/v2/gqlerror"
 	"golang.org/x/crypto/bcrypt"
 )
@@ -565,7 +565,6 @@ func (r *queryResolver) PlayerCheckUser(ctx context.Context) (bool, error) {
 func (r *queryResolver) Profile(ctx context.Context, userID int) (*model.User, error) {
 	userAuth := interceptors.ForUserContext(ctx)
 	if !userAuth.IsAuth {
-		fmt.Println(userAuth)
 		r.Logger.Errorln(fmt.Sprintf("User n°%d authentication didn't succeed", userAuth.UserID), "HttpErrorStatus", userAuth.HttpErrorResponse.StatusText)
 		return &model.User{}, &gqlerror.Error{
 			Message: userAuth.HttpErrorResponse.Message,

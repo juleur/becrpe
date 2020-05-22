@@ -1,6 +1,6 @@
 package utils
 
-import "github.com/juleur/ecrpe/graph/model"
+import "github.com/juleur/becrpe/graph/model"
 
 func ClassPapersPathRewrite(cps []*model.ClassPaper) []*model.ClassPaper {
 	for _, cp := range cps {

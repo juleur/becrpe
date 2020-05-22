@@ -2,8 +2,8 @@ package graph
 
 import (
 	"github.com/jmoiron/sqlx"
-	"github.com/juleur/ecrpe/cache"
-	"github.com/juleur/ecrpe/graph/model"
+	"github.com/juleur/becrpe/cache"
+	"github.com/juleur/becrpe/graph/model"
 	"github.com/sirupsen/logrus"
 )
 

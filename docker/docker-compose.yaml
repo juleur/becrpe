@@ -10,7 +10,7 @@ services:
     ports:
       - 7359:3306
     volumes:
-      - /Users/rd/Coding/go/src/github.com/juleur/ecrpe/sql/:/var/local
+      - /Users/rd/Coding/go/src/github.com/juleur/becrpe/sql/:/var/local
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: ecrpe
